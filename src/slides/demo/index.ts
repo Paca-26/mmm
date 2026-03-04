@@ -1,33 +1,17 @@
 import Slide01Title from './Slide01Title';
-import Slide02DataViz from './Slide02DataViz';
-import Slide03ThreeUp from './Slide03ThreeUp';
-import Slide04Timeline from './Slide04Timeline';
-import Slide05Comparison from './Slide05Comparison';
-import Slide06Quote from './Slide06Quote';
-import Slide07Metrics from './Slide07Metrics';
-import Slide08Code from './Slide08Code';
-import Slide09TwoColumn from './Slide09TwoColumn';
-import Slide10Custom from './Slide10Custom';
-import Slide11OrderingProcess from './Slide11OrderingProcess';
-import Slide12ExecutiveSummary from './Slide12ExecutiveSummary';
-import Slide13ThreeProngedStrategy from './Slide13ThreeProngedStrategy';
-import Slide14Heatmap from './Slide14Heatmap';
-import Slide15TypographyDemo from './Slide15TypographyDemo';
+import Slide02Problem from './Slide02Problem';
+import Slide03Solution from './Slide03Solution';
+import Slide04ComoFunciona from './Slide04ComoFunciona';
+import Slide05Impacto from './Slide05Impacto';
+import Slide06Vendedores from './Slide06Vendedores';
+import Slide07CTA from './Slide07CTA';
 
 export const demoSlides = [
-  { component: Slide01Title, name: 'Title', template: 'title' },
-  { component: Slide02DataViz, name: 'Data Visualization', template: 'chart-focus' },
-  { component: Slide03ThreeUp, name: 'Three-Up Cards', template: 'three-up' },
-  { component: Slide04Timeline, name: 'Timeline', template: 'timeline' },
-  { component: Slide05Comparison, name: 'Comparison', template: 'comparison' },
-  { component: Slide06Quote, name: 'Quote', template: 'quote' },
-  { component: Slide07Metrics, name: 'Metrics Dashboard', template: 'data-story' },
-  { component: Slide08Code, name: 'CTA', template: 'two-column' },
-  { component: Slide09TwoColumn, name: 'Two Column', template: 'two-column' },
-  { component: Slide10Custom, name: 'Custom Interactive', template: 'blank' },
-  { component: Slide11OrderingProcess, name: 'Ordering Process', template: 'process' },
-  { component: Slide12ExecutiveSummary, name: 'Executive Summary', template: 'two-column' },
-  { component: Slide13ThreeProngedStrategy, name: 'Three-Pronged Strategy', template: 'two-column' },
-  { component: Slide14Heatmap, name: 'AI Adoption Heatmap', template: 'data-story' },
-  { component: Slide15TypographyDemo, name: 'Typography Scale', template: 'blank' },
+  { component: Slide01Title, name: 'Título', template: 'title' },
+  { component: Slide02Problem, name: 'O Desafio', template: 'two-column' },
+  { component: Slide03Solution, name: 'A Solução', template: 'three-up' },
+  { component: Slide04ComoFunciona, name: 'Como Funciona', template: 'timeline' },
+  { component: Slide05Impacto, name: 'Impacto', template: 'data-story' },
+  { component: Slide06Vendedores, name: 'Para Vendedores', template: 'three-up' },
+  { component: Slide07CTA, name: 'Chamada à Ação', template: 'title' },
 ];
