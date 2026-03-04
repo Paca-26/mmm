@@ -40,7 +40,7 @@ function Scene() {
       <AnimatedTorus />
       <FloatingCubes />
       
-      <Environment preset="city" />
+      
       
       <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 1.5} autoRotate autoRotateSpeed={0.5} />
     </>;
