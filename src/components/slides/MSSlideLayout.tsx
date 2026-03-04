@@ -70,7 +70,7 @@ export function LogoMark({ variant = 'dark', className }: LogoMarkProps) {
         fontWeight="600"
         letterSpacing="0.05em"
       >
-        SLIDEFORGE
+        ME
       </text>
     </svg>
   );
