@@ -9,7 +9,7 @@ import { PresenterView } from '@/components/slides/PresenterView';
 import { PresenterNotesPanel } from '@/components/slides/PresenterNotesPanel';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { demoSlides } from '@/slides/demo';
+import { partnerSlides } from '@/slides/partners';
 
 interface SlideData {
   id: string;
@@ -30,15 +30,15 @@ export default function Index() {
   const [isPresenterView, setIsPresenterView] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(256);
   const [isResizing, setIsResizing] = useState(false);
-  
-  // Derive slides from demoSlides with deterministic IDs (for presenter notes persistence)
-  const slides = React.useMemo<SlideData[]>(() => 
-    demoSlides.map((s) => ({
+
+  // Derive slides from partnerSlides with deterministic IDs (for presenter notes persistence)
+  const slides = React.useMemo<SlideData[]>(() =>
+    partnerSlides.map((s) => ({
       id: `slide-${s.name.toLowerCase().replace(/\s+/g, '-')}`,
       component: s.component,
       name: s.name,
       isWIP: false,
-      description: undefined,
+      description: s.description,
     })),
     []
   );
@@ -89,7 +89,7 @@ export default function Index() {
   }, [slides.length, isPresentationMode, isPresenterView]);
 
 
-  const ActiveSlideComponent = slides[activeSlideIndex]?.component || demoSlides[0].component;
+  const ActiveSlideComponent = slides[activeSlideIndex]?.component || partnerSlides[0].component;
 
   return (
     <div className="h-screen flex flex-col bg-background">
@@ -111,9 +111,9 @@ export default function Index() {
 
       <div className="flex-1 flex overflow-hidden relative">
         {/* Left Sidebar - always rendered, clipped when hidden */}
-        <div 
+        <div
           className="flex-shrink-0 overflow-hidden z-50 h-full"
-          style={{ 
+          style={{
             width: showSidebar ? sidebarWidth : 0,
             transition: isResizing ? 'none' : 'width 200ms ease-out',
           }}
@@ -142,7 +142,7 @@ export default function Index() {
               <button
                 onClick={() => setShowSidebar(!showSidebar)}
                 className="absolute top-1.5 z-40 h-8 w-6 flex items-center justify-center bg-background border border-l-0 rounded-r-full shadow-sm hover:bg-muted"
-                style={{ 
+                style={{
                   left: showSidebar ? sidebarWidth - 5 : -4,
                   transition: isResizing ? 'none' : 'left 200ms ease-out, background-color 150ms'
                 }}
