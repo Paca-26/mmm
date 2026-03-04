@@ -30,7 +30,8 @@ export function Toolbar({
     <div className={cn('h-12 border-b bg-background flex items-center', className)}>
       {/* Left section - Logo */}
       <div className="flex items-center px-4">
-        <span className="text-sm font-medium tracking-tight text-foreground">Lovable Slides</span>
+        <span className="text-sm font-medium tracking-tight text-foreground">
+</span>
       </div>
 
       {/* Spacer */}
@@ -50,40 +51,39 @@ export function Toolbar({
               {showGrid ? 'Hide Grid' : 'Show Grid'}
               <span className="ml-auto text-xs text-muted-foreground">⇧G</span>
             </DropdownMenuItem>
-            {onToggleNotes && (
-              <DropdownMenuItem onClick={onToggleNotes}>
+            {onToggleNotes && <DropdownMenuItem onClick={onToggleNotes}>
                 <FileText className="h-4 w-4 mr-2" />
                 {showNotes ? 'Hide Notes' : 'Show Notes'}
                 <span className="ml-auto text-xs text-muted-foreground">⇧N</span>
               </DropdownMenuItem>
-            )}
+            }
             <DropdownMenuSeparator />
-            {onStartPresentation && (
-              <DropdownMenuItem onClick={onStartPresentation}>
+            {onStartPresentation &&
+            <DropdownMenuItem onClick={onStartPresentation}>
                 <Play className="h-4 w-4 mr-2" />
                 Present
                 <span className="ml-auto text-xs text-muted-foreground">⇧P</span>
               </DropdownMenuItem>
-            )}
-            {onStartPresenterView && (
-              <DropdownMenuItem onClick={onStartPresenterView}>
+            }
+            {onStartPresenterView &&
+            <DropdownMenuItem onClick={onStartPresenterView}>
                 <Monitor className="h-4 w-4 mr-2" />
                 Presenter View
                 <span className="ml-auto text-xs text-muted-foreground">⇧V</span>
               </DropdownMenuItem>
-            )}
-            {onToggleDarkMode && (
-              <>
+            }
+            {onToggleDarkMode &&
+            <>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={onToggleDarkMode}>
                   {isDarkMode ? <Sun className="h-4 w-4 mr-2" /> : <Moon className="h-4 w-4 mr-2" />}
                   {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                 </DropdownMenuItem>
               </>
-            )}
+            }
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-    </div>
-  );
+    </div>);
+
 }
