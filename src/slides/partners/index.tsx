@@ -7,11 +7,12 @@ import {
 } from 'lucide-react';
 import patternOrange from '@/assets/mmm-pattern-orange.jpg';
 import logo from '@/assets/mmm-logo.jpg';
+import heroCover from '@/assets/hero-cover.png';
 
 const Slide1Capa = () => (
-  <div className="w-full h-full relative font-sans slide-content overflow-hidden">
-    <img src={patternOrange} alt="Pattern" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" />
-    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,90%,10%)] via-[hsl(20,50%,15%)] to-[hsl(20,90%,10%)] opacity-95" />
+  <div className="w-full h-full relative font-sans slide-content overflow-hidden text-center">
+    <img src={heroCover} alt="Background" className="absolute inset-0 w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,90%,10%)]/95 via-[hsl(20,50%,15%)]/75 to-[hsl(20,90%,10%)]/95" />
 
     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-20">
       <img src={logo} alt="Mmm logo" className="w-48 h-auto mb-10 rounded-2xl shadow-2xl border-4 border-white/10" />
