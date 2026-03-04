@@ -1,9 +1,9 @@
 import React from 'react';
-import { 
-  ShoppingCart, Store, Truck, Users, 
-  Clock, MonitorSmartphone, DollarSign, EyeOff, Target, CheckCircle2, 
-  XCircle, Globe, Smartphone, Package, Search, Map, Check, Heart, ShieldCheck, 
-  TrendingUp, Navigation
+import {
+  ShoppingCart, Store, Truck, Users,
+  Clock, MonitorSmartphone, DollarSign, EyeOff, Target, CheckCircle2,
+  XCircle, Globe, Smartphone, Package, Search, Map, Check, Heart, ShieldCheck,
+  TrendingUp, Navigation, Star
 } from 'lucide-react';
 import patternOrange from '@/assets/mmm-pattern-orange.jpg';
 import logo from '@/assets/mmm-logo.jpg';
@@ -12,22 +12,22 @@ const Slide1Capa = () => (
   <div className="w-full h-full relative font-sans slide-content overflow-hidden">
     <img src={patternOrange} alt="Pattern" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" />
     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,90%,10%)] via-[hsl(20,50%,15%)] to-[hsl(20,90%,10%)] opacity-95" />
-    
+
     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-20">
       <img src={logo} alt="Mmm logo" className="w-48 h-auto mb-10 rounded-2xl shadow-2xl border-4 border-white/10" />
-      
+
       <span className="text-xl font-bold tracking-[0.2em] uppercase mb-6 text-orange-400">
         Mmm'all4u
       </span>
-      
+
       <h1 className="text-6xl font-black tracking-tight text-white mb-8 leading-[1.1] max-w-4xl">
-        O novo Shopping Digital de 
+        O novo Shopping Digital de
         <span className="text-orange-400 block mt-2">Supermercados e Restaurantes</span>
         em Angola
       </h1>
-      
+
       <div className="w-32 h-1.5 bg-orange-500 rounded-full mb-8 shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
-      
+
       <p className="text-2xl text-white/80 font-medium max-w-3xl leading-relaxed">
         Uma plataforma criada para ajudar supermercados, talhos, peixarias e mercearias a vender mais.
       </p>
@@ -95,16 +95,16 @@ const Slide3Oportunidade = () => (
   <div className="w-full h-full bg-orange-500 relative flex items-center justify-center p-16 slide-content overflow-hidden">
     <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-[800px] h-[800px] bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50" />
     <div className="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] bg-yellow-400 rounded-full mix-blend-screen filter blur-3xl opacity-30" />
-    
+
     <div className="max-w-4xl relative z-10 text-white">
       <h2 className="text-6xl font-black mb-12 leading-tight drop-shadow-lg">
         O comércio alimentar está a mudar.
       </h2>
-      
+
       <p className="text-3xl font-medium text-orange-50 mb-10">
         Cada vez mais clientes procuram:
       </p>
-      
+
       <div className="grid grid-cols-1 gap-6 mb-16 px-8">
         {[
           'comprar online',
@@ -117,7 +117,7 @@ const Slide3Oportunidade = () => (
           </div>
         ))}
       </div>
-      
+
       <div className="bg-white text-orange-600 font-bold p-8 rounded-3xl text-3xl text-center shadow-2xl transform hover:scale-105 transition-transform">
         Quem não estiver presente no digital perde mercado.
       </div>
@@ -197,7 +197,7 @@ const Slide5ComoFunciona = () => (
         <h3 className="text-2xl font-bold text-orange-900 mb-6 flex items-center gap-3 relative z-10">
           <Store className="w-6 h-6 text-orange-600" /> O Lojista apenas precisa:
         </h3>
-        
+
         <div className="flex items-center gap-8 relative z-10">
           <div className="flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-md font-bold text-2xl text-slate-800 border-2 border-orange-200">
             <CheckCircle2 className="w-8 h-8 text-green-500" />
@@ -247,9 +247,9 @@ const Slide7SemCustos = () => (
       <h2 className="text-5xl font-extrabold text-slate-900 mb-12 leading-[1.2]">
         Mais vendas <span className="text-orange-500 block">sem aumentar custos</span>
       </h2>
-      
+
       <p className="text-2xl font-medium text-slate-500 mb-8">Com Mmm'all4u:</p>
-      
+
       <ul className="space-y-6 mb-12">
         {[
           'não precisa criar site',
@@ -263,14 +263,14 @@ const Slide7SemCustos = () => (
           </li>
         ))}
       </ul>
-      
+
       <div className="inline-block border-l-4 border-orange-500 pl-6 py-2">
         <p className="text-3xl font-black text-slate-900">
           A plataforma faz isso por si.
         </p>
       </div>
     </div>
-    
+
     <div className="w-1/3 flex items-center justify-center relative">
       <div className="absolute inset-0 bg-orange-500 rounded-full opacity-10 blur-[100px]" />
       <TrendingUp className="w-64 h-64 text-orange-500 drop-shadow-2xl" />
@@ -281,11 +281,11 @@ const Slide7SemCustos = () => (
 const Slide8Visibilidade = () => (
   <div className="w-full h-full bg-orange-600 relative p-16 slide-content flex flex-col justify-center items-center text-center overflow-hidden">
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
-    
+
     <MonitorSmartphone className="w-24 h-24 text-white mb-10 mx-auto opacity-90" />
-    
+
     <h2 className="text-6xl font-black text-white mb-12 relative z-10">Visibilidade</h2>
-    
+
     <p className="text-3xl font-medium text-white/90 max-w-4xl mx-auto mb-16 leading-relaxed relative z-10">
       A loja passa a aparecer para centenas ou milhares de clientes que procuram diariamente por:
     </p>
@@ -314,7 +314,7 @@ const Slide9Logistica = () => (
     <div className="flex h-[60%] gap-12">
       <div className="flex-1 bg-slate-900 rounded-3xl p-12 text-white flex flex-col justify-center shadow-2xl relative overflow-hidden">
         <Truck className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5" />
-        
+
         <p className="text-3xl font-light mb-12 leading-tight">
           A entrega é feita pela <strong className="font-black text-orange-400">K</strong>, nossa parceira experiente em logística.
         </p>
@@ -388,7 +388,7 @@ const Slide11Primeiros = () => (
         Os primeiros parceiros terão vantagens exclusivas:
       </div>
     </div>
-    
+
     <div className="w-1/2 pl-12">
       <div className="space-y-6">
         {[
@@ -412,20 +412,20 @@ const Slide12Convite = () => (
   <div className="w-full h-full relative font-sans slide-content overflow-hidden flex flex-col items-center justify-center text-center p-16">
     <img src={patternOrange} alt="Pattern" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" />
     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,90%,10%)] via-[hsl(20,60%,15%)] to-[hsl(20,90%,15%)] opacity-95" />
-    
+
     <div className="relative z-10 max-w-5xl">
       <Store className="w-24 h-24 text-orange-500 mx-auto mb-10 opacity-80" />
-      
+
       <h2 className="text-5xl font-black tracking-tight text-white mb-8 leading-tight">
         Estamos a construir o <span className="text-orange-400">maior marketplace alimentar</span> de Angola.
       </h2>
-      
+
       <div className="h-1 w-40 bg-orange-500 mx-auto rounded-full mb-10" />
-      
+
       <p className="text-3xl text-white/90 font-light mb-16 leading-normal">
         Gostaríamos que a sua loja fizesse parte deste projeto desde o primeiro dia.
       </p>
-      
+
       <div className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-16 py-6 rounded-full text-4xl font-black shadow-[0_0_40px_rgba(249,115,22,0.4)] transform hover:scale-105 transition-all cursor-pointer border border-orange-400">
         Vamos crescer juntos!
       </div>
