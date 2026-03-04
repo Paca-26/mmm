@@ -37,25 +37,27 @@ const Slide1Capa = () => (
 );
 
 const Slide2Problema = () => (
-  <div className="w-full h-full relative flex flex-col p-16 slide-content overflow-hidden">
-    <div className="absolute inset-0 bg-slate-50" />
-    <div className="absolute top-0 right-0 w-2/3 h-full opacity-[0.04] pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', maskImage: 'linear-gradient(to left, black, transparent)' }} />
-    <div className="absolute top-0 right-0 w-1/3 h-full bg-orange-500/5 mix-blend-multiply" />
+  <div className="w-full h-full relative flex flex-col p-16 slide-content overflow-hidden bg-gradient-to-br from-slate-50 to-orange-50">
+    <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl" />
+    <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', maskImage: 'linear-gradient(to bottom left, black, transparent)' }} />
+    <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-orange-500/10 mix-blend-multiply rounded-full blur-[100px]" />
 
     <div className="mb-12 relative z-10">
       <div className="flex items-center gap-4 mb-2">
         <div className="h-1 w-12 bg-orange-500 rounded-full" />
         <span className="text-orange-500 font-black uppercase tracking-[0.2em] text-sm">O Contexto</span>
       </div>
-      <h2 className="text-5xl font-extrabold text-slate-900">O problema atual</h2>
+      <h2 className="text-6xl font-black text-slate-900 drop-shadow-sm">O problema atual</h2>
     </div>
 
     <div className="grid grid-cols-2 gap-12 flex-1 z-10">
       {/* Left Column */}
-      <div className="bg-white rounded-3xl p-10 shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col relative overflow-hidden group">
-        <div className="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-orange-500 transition-colors duration-500" />
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 pb-4 border-b border-slate-100 flex items-center gap-3">
-          <Target className="w-6 h-6 text-slate-400" />
+      <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-10 shadow-xl shadow-orange-900/5 border border-white flex flex-col relative overflow-hidden group">
+        <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-orange-300 to-orange-500" />
+        <h3 className="text-2xl font-black text-slate-800 mb-8 pb-4 border-b border-slate-200 flex items-center gap-3">
+          <div className="p-2 bg-slate-100 rounded-xl">
+            <Target className="w-6 h-6 text-orange-500" />
+          </div>
           Desafios dos Negócios:
         </h3>
         <ul className="space-y-6 flex-1">
@@ -66,20 +68,22 @@ const Slide2Problema = () => (
             { icon: EyeOff, text: 'Falta de visibilidade no mundo digital' },
             { icon: Target, text: 'Dificuldade em alcançar novos clientes' }
           ].map((item, i) => (
-            <li key={i} className="flex items-start gap-4 text-slate-600 text-lg">
-              <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center flex-shrink-0 mt-1 border border-slate-100 shadow-sm">
-                <item.icon className="w-5 h-5 text-slate-500" />
+            <li key={i} className="flex items-start gap-4 text-slate-700 text-lg">
+              <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-orange-100 transition-colors">
+                <item.icon className="w-5 h-5 text-orange-600" />
               </div>
-              <span className="pt-3 font-medium">{item.text}</span>
+              <span className="pt-3 font-bold">{item.text}</span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Right Column */}
-      <div className="bg-slate-900 rounded-3xl p-10 shadow-2xl flex flex-col relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-10 -mt-10" />
-        <h3 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-slate-800 relative z-10">
+      <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2.5rem] p-10 shadow-2xl flex flex-col relative overflow-hidden border border-slate-700">
+        <div className="absolute top-0 right-0 w-[150%] h-[150%] opacity-20 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'overlay' }} />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-[80px]" />
+
+        <h3 className="text-2xl font-black text-white mb-8 pb-4 border-b border-slate-700/50 relative z-10">
           O que os Consumidores querem:
         </h3>
         <ul className="space-y-8 relative z-10 mt-4">
@@ -88,11 +92,11 @@ const Slide2Problema = () => (
             { text: 'Comparar produtos facilmente' },
             { text: 'Receber as compras rapidamente' }
           ].map((item, i) => (
-            <li key={i} className="flex items-center gap-5 text-white/90 text-2xl font-medium">
-              <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 border border-green-500/30">
-                <CheckCircle2 className="w-6 h-6 text-green-400" />
+            <li key={i} className="flex items-center gap-6 bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-md">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-green-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-lg border-2 border-green-200">
+                <CheckCircle2 className="w-8 h-8 text-white" />
               </div>
-              <span>{item.text}</span>
+              <span className="text-white font-bold text-2xl drop-shadow-md">{item.text}</span>
             </li>
           ))}
         </ul>
@@ -145,26 +149,26 @@ const Slide3Oportunidade = () => (
 );
 
 const Slide4Solucao = () => (
-  <div className="w-full h-full bg-slate-50 relative p-16 slide-content overflow-hidden flex flex-col">
-    <div className="absolute top-0 w-full h-[40%] bg-white rounded-b-[4rem] shadow-sm z-0" />
-    <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover' }} />
+  <div className="w-full h-full relative p-16 slide-content overflow-hidden flex flex-col bg-gradient-to-br from-orange-50 to-orange-100">
+    <div className="absolute top-0 w-full h-[45%] bg-gradient-to-r from-orange-500 to-orange-600 rounded-b-[5rem] shadow-xl z-0" />
+    <div className="absolute top-0 w-full h-[45%] opacity-20 pointer-events-none z-0 rounded-b-[5rem]" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'overlay' }} />
 
-    <div className="text-center mb-20 relative z-10 pt-4">
-      <div className="flex items-center justify-center gap-4 mb-4">
-        <div className="h-1 w-8 bg-orange-500 rounded-full" />
-        <span className="text-orange-500 font-black uppercase tracking-[0.2em] text-sm">A Solução</span>
-        <div className="h-1 w-8 bg-orange-500 rounded-full" />
+    <div className="text-center mb-16 relative z-10 pt-6">
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="h-1 w-12 bg-white/50 rounded-full" />
+        <span className="text-white font-black uppercase tracking-[0.2em] text-sm drop-shadow-md">A Solução</span>
+        <div className="h-1 w-12 bg-white/50 rounded-full" />
       </div>
-      <h2 className="text-6xl font-extrabold text-slate-900 mb-8 flex items-center justify-center gap-6">
-        <img src={logo} alt="Mmm logo" className="h-16 w-auto rounded-xl shadow-md border-2 border-white" />
+      <h2 className="text-7xl font-black text-white mb-8 flex items-center justify-center gap-6 drop-shadow-lg">
+        <img src={logo} alt="Mmm logo" className="h-20 w-auto rounded-2xl shadow-2xl border-4 border-white" />
         Mmm'all4u
       </h2>
-      <p className="text-3xl font-medium text-slate-600 max-w-4xl mx-auto leading-relaxed">
-        Um shopping digital onde os clientes encontram <strong className="text-orange-600">tudo numa única plataforma.</strong>
+      <p className="text-3xl font-medium text-white/90 max-w-4xl mx-auto leading-relaxed">
+        Um shopping digital onde os clientes encontram <strong className="text-white font-black border-b-2 border-white/50 pb-1">tudo numa única plataforma.</strong>
       </p>
     </div>
 
-    <div className="grid grid-cols-5 gap-6 max-w-6xl mx-auto flex-1 relative z-10 w-full pt-10">
+    <div className="grid grid-cols-5 gap-6 max-w-6xl mx-auto flex-1 relative z-10 w-full pt-8">
       {[
         { icon: Store, title: 'Vários\nSupermercados' },
         { icon: Map, title: 'Vários\nTalhos' },
@@ -191,21 +195,27 @@ const Slide4Solucao = () => (
 );
 
 const Slide5ComoFunciona = () => (
-  <div className="w-full h-full bg-slate-50 relative p-16 slide-content flex flex-col overflow-hidden">
-    <div className="absolute blur-sm inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', filter: 'grayscale(100%)' }} />
+  <div className="w-full h-full relative p-16 slide-content flex flex-col overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100">
+    <div className="absolute top-0 right-0 w-2/3 h-full opacity-10 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', maskImage: 'linear-gradient(to left, black, transparent)' }} />
     <div className="mb-12 relative z-10">
-      <span className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-2 block">Operação</span>
-      <h2 className="text-5xl font-extrabold text-slate-900">Como funciona</h2>
+      <div className="flex items-center gap-4 mb-2">
+        <div className="h-1 w-12 bg-orange-500 rounded-full" />
+        <span className="text-orange-500 font-black uppercase tracking-[0.2em] text-sm">Operação</span>
+      </div>
+      <h2 className="text-6xl font-black text-slate-900 drop-shadow-sm">Como funciona</h2>
     </div>
 
     <div className="flex-1 flex flex-col gap-10">
       {/* O Cliente */}
-      <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 flex-1 flex flex-col justify-center">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
-          <Users className="w-6 h-6 text-orange-500" /> O Cliente:
+      <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl shadow-orange-900/5 border border-white flex-1 flex flex-col justify-center">
+        <h3 className="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3">
+          <div className="p-2 bg-orange-100 rounded-xl">
+            <Users className="w-6 h-6 text-orange-600" />
+          </div>
+          O Cliente:
         </h3>
         <div className="flex justify-between items-center relative gap-4">
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-100 -z-10 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 -z-10 -translate-y-1/2" />
           {[
             { num: '1', text: 'Entra na\nplataforma', icon: Smartphone },
             { num: '2', text: 'Escolhe a\nsua loja', icon: Store },
@@ -225,18 +235,21 @@ const Slide5ComoFunciona = () => (
       </div>
 
       {/* O Lojista */}
-      <div className="bg-orange-50 rounded-3xl p-8 shadow-lg border border-orange-100 flex-1 flex flex-col justify-center relative overflow-hidden">
-        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-orange-100 to-transparent" />
-        <h3 className="text-2xl font-bold text-orange-900 mb-6 flex items-center gap-3 relative z-10">
-          <Store className="w-6 h-6 text-orange-600" /> O Lojista apenas precisa:
+      <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-[2rem] p-8 shadow-2xl flex-1 flex flex-col justify-center relative overflow-hidden">
+        <div className="absolute right-0 top-0 h-full w-full opacity-20" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'multiply' }} />
+        <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3 relative z-10">
+          <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm">
+            <Store className="w-6 h-6 text-white" />
+          </div>
+          O Lojista apenas precisa:
         </h3>
 
         <div className="flex items-center gap-8 relative z-10">
-          <div className="flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-md font-bold text-2xl text-slate-800 border-2 border-orange-200">
+          <div className="flex items-center gap-4 bg-white px-8 py-5 rounded-2xl shadow-xl font-black text-2xl text-slate-800 border-4 border-orange-200 hover:-translate-y-1 transition-transform">
             <CheckCircle2 className="w-8 h-8 text-green-500" />
             Preparar o pedido
           </div>
-          <p className="text-3xl font-black text-orange-600 ml-auto mr-12 uppercase tracking-wide">
+          <p className="text-3xl font-black text-orange-100 ml-auto mr-12 uppercase tracking-widest drop-shadow-md">
             Nós tratamos do resto.
           </p>
         </div>
@@ -284,13 +297,16 @@ const Slide6Vantagens = () => (
 );
 
 const Slide7SemCustos = () => (
-  <div className="w-full h-full bg-slate-50 relative p-16 slide-content flex items-center overflow-hidden">
-    <div className="absolute top-0 right-0 w-2/3 h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover' }} />
+  <div className="w-full h-full bg-orange-500 relative p-16 slide-content flex items-center overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600" />
+    <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'multiply' }} />
 
-    <div className="flex-1 pr-16 bg-white shadow-2xl shadow-slate-200/50 rounded-[3rem] h-full p-16 border border-slate-100 relative z-10 flex flex-col justify-center">
+    <div className="flex-1 pr-16 bg-white shadow-2xl shadow-orange-900/40 rounded-[3rem] h-full p-16 border-4 border-white/20 relative z-10 flex flex-col justify-center">
       <div className="flex items-center gap-4 mb-8">
-        <DollarSign className="w-10 h-10 text-orange-500 p-2 bg-orange-50 rounded-lg" />
-        <h2 className="text-5xl font-extrabold text-slate-900 leading-[1.2]">
+        <div className="p-3 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl shadow-lg">
+          <DollarSign className="w-10 h-10 text-white" />
+        </div>
+        <h2 className="text-5xl font-black text-slate-900 leading-[1.2]">
           Vender mais,<br /><span className="text-orange-500">sem aumentar custos</span>
         </h2>
       </div>
@@ -313,16 +329,17 @@ const Slide7SemCustos = () => (
         ))}
       </div>
 
-      <div className="bg-slate-900 rounded-2xl p-8 flex items-center justify-between mt-auto">
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 flex items-center justify-between mt-auto shadow-xl border border-slate-700">
         <p className="text-3xl font-black text-white">A plataforma faz isso por si.</p>
-        <CheckCircle2 className="w-10 h-10 text-green-400" />
+        <div className="p-2 bg-green-500/20 rounded-full">
+          <CheckCircle2 className="w-10 h-10 text-green-400" />
+        </div>
       </div>
     </div>
 
     <div className="w-[30%] flex flex-col items-center justify-center relative z-10 pl-8">
-      <div className="w-full aspect-square rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 shadow-[0_0_80px_rgba(249,115,22,0.4)] flex items-center justify-center p-12 relative overflow-hidden">
-        <img src={patternOrange} alt="Pattern" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay" />
-        <TrendingUp className="w-full h-full text-white relative z-10 drop-shadow-xl" />
+      <div className="w-full aspect-square rounded-[3rem] bg-white/10 backdrop-blur-md shadow-[0_0_80px_rgba(255,255,255,0.2)] flex items-center justify-center p-12 relative overflow-hidden border border-white/30 rotate-3 hover:rotate-0 transition-transform duration-500">
+        <TrendingUp className="w-full h-full text-white relative z-10 drop-shadow-2xl" />
       </div>
     </div>
   </div>
@@ -367,37 +384,48 @@ const Slide8Visibilidade = () => (
 );
 
 const Slide9Logistica = () => (
-  <div className="w-full h-full bg-slate-50 relative p-16 slide-content">
-    <div className="absolute bottom-0 left-0 w-full h-1/2 opacity-5 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', maskImage: 'linear-gradient(to top, black, transparent)' }} />
+  <div className="w-full h-full relative p-16 slide-content overflow-hidden flex flex-col bg-orange-50">
+    <div className="absolute inset-0 bg-gradient-to-tr from-orange-200/50 via-white to-orange-100/30" />
+    <div className="absolute top-0 left-0 w-full h-[60%] opacity-15 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', maskImage: 'linear-gradient(to bottom, black, transparent)' }} />
+
     <div className="mb-14 relative z-10">
-      <span className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-2 block">Operações</span>
-      <h2 className="text-5xl font-extrabold text-slate-900">Logística profissional</h2>
+      <div className="flex items-center gap-4 mb-2">
+        <div className="h-1 w-12 bg-orange-500 rounded-full" />
+        <span className="text-orange-500 font-black uppercase tracking-[0.2em] text-sm">Operações</span>
+      </div>
+      <h2 className="text-6xl font-black text-slate-900 drop-shadow-sm">Logística <span className="text-orange-600">profissional</span></h2>
     </div>
 
-    <div className="flex h-[60%] gap-12">
-      <div className="flex-1 bg-slate-900 rounded-3xl p-12 text-white flex flex-col justify-center shadow-2xl relative overflow-hidden">
-        <Truck className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5" />
+    <div className="flex flex-1 gap-12 relative z-10 items-center justify-center">
+      <div className="w-full max-w-6xl bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-16 text-white flex flex-col justify-center shadow-2xl relative overflow-hidden border-4 border-slate-700">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'overlay' }} />
+        <Truck className="absolute -bottom-16 -right-16 w-[400px] h-[400px] text-white/5 rotate-12" />
 
-        <p className="text-3xl font-light mb-12 leading-tight">
-          A entrega é feita pela <strong className="font-black text-orange-400">K</strong>, nossa parceira experiente em logística.
-        </p>
+        <div className="relative z-10 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 mb-12 shadow-lg inline-block self-start">
+          <p className="text-4xl font-light leading-tight">
+            A entrega aos clientes é feita pela <strong className="font-black text-orange-400 text-5xl">K</strong>,
+            <span className="block mt-2 text-2xl text-slate-300">a nossa parceira especialista em logística.</span>
+          </p>
+        </div>
 
-        <p className="text-xl font-bold text-slate-400 mb-6 uppercase tracking-wider">Isso significa:</p>
+        <div className="relative z-10">
+          <p className="text-2xl font-black text-white/50 mb-8 uppercase tracking-[0.2em]">O que isto garante para a loja:</p>
 
-        <div className="grid grid-cols-2 gap-8">
-          {[
-            { text: 'Recolha organizada', icon: Package },
-            { text: 'Entrega rápida', icon: Clock },
-            { text: 'Rastreamento do pedido', icon: Map },
-            { text: 'Experiência profissional', icon: ShieldCheck },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-4">
-              <div className="p-3 bg-orange-500/20 rounded-xl">
-                <item.icon className="w-6 h-6 text-orange-400" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { text: 'Recolha\nsem stress', icon: Package },
+              { text: 'Alta\nRapidez', icon: Clock },
+              { text: 'Rastreio\nem tempo real', icon: Map },
+              { text: 'Experiência\nPremium', icon: ShieldCheck },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col gap-4 bg-slate-800/80 p-6 rounded-[2rem] border border-slate-600/50 hover:-translate-y-2 transition-transform shadow-xl">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg border-2 border-orange-300">
+                  <item.icon className="w-8 h-8 text-white drop-shadow-md" />
+                </div>
+                <span className="text-xl font-bold whitespace-pre-line leading-tight text-white/90">{item.text}</span>
               </div>
-              <span className="text-xl font-medium">{item.text}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -405,36 +433,43 @@ const Slide9Logistica = () => (
 );
 
 const Slide10Simples = () => (
-  <div className="w-full h-full bg-white relative p-16 slide-content flex flex-col overflow-hidden">
-    <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: '100px 100px', backgroundRepeat: 'repeat' }} />
+  <div className="w-full h-full relative p-16 slide-content flex flex-col overflow-hidden bg-orange-500">
+    <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600" />
+    <div className="absolute right-0 top-0 w-full h-full opacity-20 pointer-events-none" style={{ backgroundImage: `url(${patternOrange})`, backgroundSize: 'cover', mixBlendMode: 'multiply' }} />
+
     <div className="text-center mb-16 relative z-10">
-      <h2 className="text-5xl font-extrabold text-slate-900 mb-6">Simples de usar</h2>
-      <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+      <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="h-1 w-12 bg-white/50 rounded-full" />
+        <span className="text-white font-black uppercase tracking-[0.2em] text-sm drop-shadow-md">Painel de Lojista</span>
+        <div className="h-1 w-12 bg-white/50 rounded-full" />
+      </div>
+      <h2 className="text-7xl font-black text-white mb-6 drop-shadow-xl">Simples de usar</h2>
+      <p className="text-3xl font-medium text-orange-50 max-w-4xl mx-auto">
         A sua loja recebe tudo o que precisa para operar sem complicações.
       </p>
     </div>
 
-    <div className="flex-1 flex items-center justify-center">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-5xl">
+    <div className="flex-1 flex items-center justify-center relative z-10 mt-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
         {[
           { title: 'Acesso ao Painel', icon: MonitorSmartphone, desc: 'Controlo total no browser' },
           { title: 'Gestão de Produtos', icon: Package, desc: 'Stock e preços sempre atualizados' },
           { title: 'Gestão de Pedidos', icon: ShoppingCart, desc: 'Acompanhe as vendas em tempo real' },
           { title: 'Relatórios de Vendas', icon: TrendingUp, desc: 'Analise os seus resultados e lucro' },
         ].map((item, i) => (
-          <div key={i} className="bg-slate-50 border-2 border-slate-100 rounded-3xl p-8 flex flex-col items-center text-center hover:border-orange-500 transition-colors group">
-            <div className="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <item.icon className="w-10 h-10 text-orange-500" />
+          <div key={i} className="bg-white/10 backdrop-blur-md rounded-[2rem] p-8 flex flex-col items-center text-center shadow-2xl shadow-orange-900/20 hover:-translate-y-4 hover:bg-white/20 transition-all duration-300 group border border-white/20">
+            <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 border-4 border-orange-200">
+              <item.icon className="w-12 h-12 text-orange-500" />
             </div>
-            <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
-            <p className="text-slate-500 text-sm font-medium">{item.desc}</p>
+            <h3 className="text-2xl font-black text-white mb-4 leading-tight">{item.title}</h3>
+            <p className="text-orange-100 text-lg font-medium leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
 
-    <div className="text-center mt-auto">
-      <span className="inline-block border-b-4 border-orange-500 pb-2 text-3xl font-black text-slate-800">
+    <div className="text-center mt-auto relative z-10">
+      <span className="inline-block bg-white text-orange-600 px-12 py-4 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.2)] text-2xl font-black transform -rotate-1 border-b-4 border-orange-200">
         Tudo simples e fácil de usar.
       </span>
     </div>
